@@ -1,2 +1,2 @@
 # devconteiner-cicd
- DevConteiner + Jest + CI
+ DevConteiner + CI + Jest
