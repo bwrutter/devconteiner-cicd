@@ -6,7 +6,7 @@ describe('Teste da calculadora', () => {
         expect(soma(10, 10)).toBe(20);
     })
 
-    it('10 + 10 deve retornar 0', () => {
+    it('10 - 10 deve retornar 0', () => {
         expect(subtracao(10, 10)).toBe(0);
     })
 })
