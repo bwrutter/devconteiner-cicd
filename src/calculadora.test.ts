@@ -5,10 +5,8 @@ describe('Teste da calculadora', () => {
     it('10 + 10 deve retornar 20', () => {
         expect(soma(10, 10)).toBe(20);
     })
-})
 
-describe('Teste da calculadora', () => {
-    it('10 + 10 deve retornar 20', () => {
+    it('10 + 10 deve retornar 0', () => {
         expect(subtracao(10, 10)).toBe(0);
     })
 })
