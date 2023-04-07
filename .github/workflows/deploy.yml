@@ -1,14 +1,11 @@
 name: CI
 
 on:
-  push:
-    branches: [ "main" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [main]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     strategy:
@@ -16,12 +13,24 @@ jobs:
         node-version: [18.x]
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    
-    - name: Testes unitarios
-    - run: npm run test
+      - uses: actions/checkout@v3
+
+      - name: Verifica versão do Node
+        id: node
+        run: echo "{name}={value}" >> $GITHUB_OUTPUT
+
+      - name: Get node_modules cache
+        uses: actions/cache@v3.0.2
+        id: node_modules
+        with:
+          path: |
+            **/node_modules
+          key: ${{ runner.os }}-node_modules-${{ hashFiles('**/package-lock') }}-${{ steps.node.outputs.version }}
+
+      - name: Install dependencies
+        if: steps.node_modules.outputs.cache-hit != 'true'
+        run: npm clean-install --ignore-scripts
+
+      - name: Rodando testes unitarios
+        run: |
+          npm run test
