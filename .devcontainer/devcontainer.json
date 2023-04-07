@@ -1,0 +1,14 @@
+{
+  "name": "leve.app",
+  "service": "dev-conteiner",
+  "workspaceFolder": "/workspace",
+  "remoteUser": "node",
+  "dockerComposeFile": "docker-compose.yml",
+  "extensions": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "humao.rest-client",
+    "Vue.volar"
+  ],
+  "features": {}
+}
