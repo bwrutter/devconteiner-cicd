@@ -1,0 +1,16 @@
+{
+  "name": "devconteiner-cicd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "Bryan W Rutter",
+  "license": "MIT",
+  "devDependencies": {
+    "@jest/globals": "^29.5.0",
+    "ts-jest": "^29.1.0"
+  }
+}
