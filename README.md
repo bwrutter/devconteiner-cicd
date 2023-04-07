@@ -1,2 +1,7 @@
 # devconteiner-cicd
- DevConteiner + CI + Jest
+Repositório utilizando o DevConteiner + CI + Jest
+
+Requisitos:
+VSCode,
+Docker,
+Extensão Remote Development, Dev Containers.
